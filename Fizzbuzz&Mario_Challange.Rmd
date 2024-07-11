@@ -1,0 +1,58 @@
+---
+title: "Fizzbuzz&Mario_Challange"
+output: html_document
+date: "2024-07-11"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**Mario Challenge:** In the classic Super Mario games, Mario ends each level by ascending a flight of stairs and leaping off the top to arrive at the castle at the end. (See [here](https://youtu.be/-avspZlbOWU?t=55) for details). We can imagine that each of the bricks of the stairs is a character X.
+
+```         
+If the function is called marioStairs() and we pass in the value 4, we would expect to see stairs with a length of 4 and a height of 4:
+
+
+```
+
+```{r}
+for (i in 0:3) {
+    for (j in 0:i) {
+      cat("X ")
+    }
+    cat("\n \n")
+  }
+```
+
+```         
+
+XX
+
+XXX
+
+XXXX
+```
+
+\`\`\`
+
+Creating a function that checks an input of type int and returns fizz if the number is a multiple of 3, buzz if the number is a #multiple of 5, and fizzbuzz if the number is a multiple of 3 and 5.
+
+```{r}
+fizz_buzz <- function(n) {
+    result <- c()
+    for (i in 1:n) {
+      if (i %% 3 == 0 ) {
+        result <- c(result, "Fizz")
+      } else if (i %% 3 == 0 && i %% 5 == 0) {
+        result <- c(result, "Fizzbuzz")
+      } else if (i %% 5 == 0) {
+        result <- c(result, "Buzz")
+      } else {
+        result <- c(result, as.character(i))
+      }
+    }
+    return(result)
+}
+fizz_buzz(10)
+```
